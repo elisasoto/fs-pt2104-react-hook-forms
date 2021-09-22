@@ -1,7 +1,16 @@
-import { catcher, setBearer } from '../helpers'
+import { catcher, setBearer } from "../helpers";
 
-export const login = ({ post }) => async params =>
-  await catcher(post)('/auth/login', params)
+export const login =
+  ({ post }) =>
+  async (params) =>
+    await catcher(post)("/auth/login", params);
 
-export const user = ({ get }) => async ({ token }) =>
-  await catcher(get)('/auth/me', setBearer(token))
+export const user =
+  ({ get }) =>
+  async ({ token }) =>
+    await catcher(get)("/auth/me", setBearer(token));
+
+export const register =
+  ({ post }) =>
+  async (params) =>
+    await catcher(post)("/auth/register", params);
